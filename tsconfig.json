@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "esModuleInterop": true
-    },
-    "exclude": [
-        "node_modules"
-    ]
+        "target": "ES6",
+        "module": "CommonJS",
+        "declaration": true,
+        "outDir": "dist/",
+        "strict": true
+    }
 }

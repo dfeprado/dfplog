@@ -1,17 +1,13 @@
 "use strict";
 // Define o objeto de log
 // Utiliza o módulo Chalk para fazer log com cores e implementa nível de log
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-var chalk_1 = __importDefault(require("chalk"));
-var ch = chalk_1["default"];
+const ch = require("chalk");
 module.exports = {
     _logLevel: 0xf,
     _doLog: function (msg) {
         console.log(msg);
     },
-    setLogLevel: function (newLevel) {
+    setLogLevel(newLevel) {
         this._logLevel = newLevel;
     },
     info: function (msg) {

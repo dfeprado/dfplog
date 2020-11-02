@@ -34,4 +34,13 @@ log.setLogLevel(0x1 | 0x2 | 0x8); // Info, notice and error only (ignore warning
 log.setLogLevel(0xf); // all levels enabled (default)
 ```
 
+### Typescript usage
+Add the *esModuleInterop = true* configuration to your tsconfig.json file.
+
+```typescript
+import Log from '@dfeprado/log';
+
+Log.info('Hello world!');
+```
+
 ### Every new ideas or sugestions are wellcomed.

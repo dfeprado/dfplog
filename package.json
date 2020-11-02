@@ -1,13 +1,16 @@
 {
   "name": "@dfeprado/log",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "Log utility based on chalk",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "prepublish": "npm run build",
+    "test": "node test/test.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

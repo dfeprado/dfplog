@@ -1,9 +1,6 @@
 // Define o objeto de log
 // Utiliza o módulo Chalk para fazer log com cores e implementa nível de log
-
-import chalk from 'chalk';
-
-const ch = chalk;
+import ch = require('chalk');
 
 // Objeto que dá meios para fazer os logs.
 //  * _logLevel utiliza os primeiros 4 bits de um byte para definir o nível de log (1 - ligado / 0 - desligado):
