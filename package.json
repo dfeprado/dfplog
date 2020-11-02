@@ -1,27 +1,30 @@
 {
-  "name": "@dfp/log",
-  "version": "1.0.0",
-  "description": "A log utility, based on chalk, that implements log level and easy-to-use log functions",
+  "name": "@dfeprado/log",
+  "version": "1.0.1",
+  "description": "Log utility based on chalk",
   "main": "index.js",
-  "types": "index.d.ts",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dfeprado/dfplog.git"
+    "url": "git+https://github.com/dfeprado/log.git"
   },
   "keywords": [
-    "Chalk log",
-    "level log",
-    "log"
+    "Log utility",
+    "Log level",
+    "Log"
   ],
   "author": "Daniel Prado",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dfeprado/dfplog/issues"
+    "url": "https://github.com/dfeprado/log/issues"
   },
-  "homepage": "https://github.com/dfeprado/dfplog#readme",
+  "homepage": "https://github.com/dfeprado/log#readme",
+  "private": false,
   "dependencies": {
     "chalk": "^4.1.0"
   }
