@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/dfeprado/log/issues"
   },
-  "homepage": "https://github.com/dfeprado/log#readme",
+  "homepage": "https://github.com/dfeprado/log#readme.md",
   "private": false,
   "dependencies": {
     "chalk": "^4.1.0"
