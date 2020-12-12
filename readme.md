@@ -8,7 +8,9 @@ npm install @dfeprado/log
 
 ### Basic usage
 ```javascript
-const log = require('@dfeprado/log');
+const { LogLevel, Log } = require('@dfeprado/log');
+
+const log = new Log(LogLevel.all);
 
 log.info('Hello world!'); // info log, green message
 log.notice('Hello world!'); // notice log, purple message
@@ -16,31 +18,46 @@ log.warning('Hello world!'); // warning log, yellow message
 log.error('Hello world!'); // error log, red message
 ```
 
-### Log level configuration
-You can set log level with OR numeric values and Log.setLogLevel()
-- 0x1: info level only
-- 0x2: notice level only
-- 0x4: warning level only
-- 0x8: error level only
+### Log levels
+- info
+- notice
+- warning
+- error
+- all
 
 #### Examples:
+**Without file logging**
+
 ```javascript
-const log = require('@dfeprado/log');
+const { LogLevel, Log } = require('@dfeprado/log');
 
-log.setLogLevel(0x1 | 0x8); // Info and error only
+let log = new Log(LogLevel.info | LogLevel.error); // Info and error only
 
-log.setLogLevel(0x1 | 0x2 | 0x8); // Info, notice and error only (ignore warning messages)
+log.info('Hello world!'); // print to stdout
+log.error('Ohh!'); // print to stdout
+log.warning('Warning!!!'); // do not print to stdout
 
-log.setLogLevel(0xf); // all levels enabled (default)
+log.close(); // gracefully closes log
 ```
 
-### Typescript usage
-Add the *esModuleInterop = true* configuration to your tsconfig.json file.
+**With file logging**
+```javascript
+const { LogLevel, Log } = require('@dfeprado/log');
+
+let log = new Log(LogLevel.all, '/var/log/log_sample');
+
+log.error('Ohh!'); // write log to stdout and to /var/log/log_sample
+
+log.close(); // gracefully closes log
+```
 
 ```typescript
-import Log from '@dfeprado/log';
+import { LogLevel, Log} from '@dfeprado/log';
 
-Log.info('Hello world!');
+let log: Log = new Log(LogLevel.all);
+
+log.info('Hello world!');
+log.close(); // gracefully closes log.
 ```
 
 ### Every new ideas or sugestions are wellcomed.

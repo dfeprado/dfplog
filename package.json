@@ -1,6 +1,6 @@
 {
   "name": "@dfeprado/log",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "Log utility based on chalk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,8 +9,9 @@
   },
   "scripts": {
     "prepublish": "npm run build",
-    "test": "node test/test.js",
-    "build": "tsc"
+    "test": "npm run build-test && node test/test.js",
+    "build": "npx tsc --build tsconfig.json",
+    "build-test": "npx tsc --build tsconfig-dev.json"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,9 @@
   "private": false,
   "dependencies": {
     "chalk": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.12",
+    "typescript": "^4.1.3"
   }
 }
