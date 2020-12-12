@@ -51,6 +51,7 @@ log.error('Ohh!'); // write log to stdout and to /var/log/log_sample
 log.close(); // gracefully closes log
 ```
 
+## Typescript usage
 ```typescript
 import { LogLevel, Log} from '@dfeprado/log';
 
