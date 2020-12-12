@@ -51,6 +51,17 @@ log.error('Ohh!'); // write log to stdout and to /var/log/log_sample
 log.close(); // gracefully closes log
 ```
 
+**Disabling stdout**
+```javascript
+const {LogLevel, Log} = require('@dfeprado/log');
+
+let log = new Log(LogLevel.all, '/var/log/log_sample');
+log.setStdoutOff();
+log.Error('Hey! I cannot show myself in stdout!');
+
+log.close();
+```
+
 ## Typescript usage
 ```typescript
 import { LogLevel, Log} from '@dfeprado/log';

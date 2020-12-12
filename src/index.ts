@@ -1,6 +1,6 @@
 // Define o objeto de log
 // Utiliza o módulo Chalk para fazer log com cores e implementa nível de log
-import ch = require('chalk');
+const ch = require('chalk');
 import { WriteStream, createWriteStream } from 'fs';
 
 export enum LogLevel {
@@ -13,6 +13,7 @@ export enum LogLevel {
 
 export class Log {
     private logFile: WriteStream | null = null;
+    private stdoutOn: boolean = true;
 
     constructor (private logLevel: LogLevel = LogLevel.all, logFile: string = '') {
         if (logFile)
@@ -20,11 +21,21 @@ export class Log {
     }
 
     private doLog(consoleMsg: string, logMsg: string) {
-        console.log(consoleMsg);
+        if (this.stdoutOn)
+            console.log(consoleMsg);
+            
         if (this.logFile) {
             const d = new Date();
             this.logFile.write(`[${d.toLocaleString()} ${logMsg}\n`);
         }
+    }
+
+    setStdoutOn(): void {
+        this.stdoutOn = true;
+    }
+
+    setStdoutOff(): void {
+        this.stdoutOn = false;
     }
 
     close() {

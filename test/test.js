@@ -1,7 +1,10 @@
-"use strict";
-exports.__esModule = true;
-var index_1 = require("../src/index");
-var log = new index_1.Log(index_1.LogLevel.all);
+const {LogLevel, Log} = require('../build/index');
+
+let log = new Log(LogLevel.all, './test/logfile');
+
+log.setStdoutOff();
+
 log.info('Hello world!');
-log.error('Ohh!');
+log.notice('Oh my God!');
+
 log.close();
